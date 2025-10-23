@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace BlackCat\Database\Packages\EncryptedFields\Service;
 
-use BlackCat\Core\Database\Database;
+use BlackCat\Core\Database;
 use BlackCat\Database\Packages\EncryptedFields\Dto\EncryptedFieldDto;
 use BlackCat\Database\Packages\EncryptedFields\Mapper\EncryptedFieldDtoMapper;
 use BlackCat\Database\Packages\EncryptedFields\Repository\EncryptedFieldRepository;
