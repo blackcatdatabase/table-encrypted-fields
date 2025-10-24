@@ -1,5 +1,6 @@
--- Auto-generated from schema-map.psd1 (map@6cefe8e)
--- table: encrypted_fields
+-- Auto-generated from schema-map-mysql.psd1 (map@mtime:2025-10-24T09:13:35Z)
+-- engine: mysql
+-- table:  encrypted_fields
 CREATE TABLE IF NOT EXISTS encrypted_fields (
   id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   entity_table VARCHAR(64) NOT NULL,

@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\EncryptedFields;
 final class Definitions {
     // --- základní metadata ---
     public static function table(): string { return 'encrypted_fields'; }
-    public static function contractView(): string { return 'v_encrypted_fields_contract'; }
+    public static function contractView(): string { return 'vw_encrypted_fields'; }
     /** @return string[] */
     public static function columns(): array { return [ 'id', 'entity_table', 'entity_pk', 'field_name', 'ciphertext', 'meta', 'created_at', 'updated_at' ]; }
     public static function pk(): string { return 'id'; }
