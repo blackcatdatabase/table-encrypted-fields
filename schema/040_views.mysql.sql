@@ -1,9 +1,9 @@
--- Auto-generated from schema-views-mysql.psd1 (map@mtime:2025-10-24T09:19:46Z)
+-- Auto-generated from schema-views-mysql.psd1 (map@38d5403)
 -- engine: mysql
 -- table:  encrypted_fields
 -- Contract view for [encrypted_fields]
 -- Hides ciphertext; keeps routing metadata.
-CREATE OR REPLACE VIEW vw_encrypted_fields AS
+CREATE OR REPLACE SQL SECURITY INVOKER VIEW vw_encrypted_fields AS
 SELECT
   id,
   entity_table,
