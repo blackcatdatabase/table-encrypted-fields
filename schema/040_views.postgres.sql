@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-postgres.psd1 (map@38d5403)
+-- Auto-generated from schema-views-postgres.psd1 (map@c5e4097)
 -- engine: postgres
 -- table:  encrypted_fields
 -- Contract view for [encrypted_fields]
@@ -11,5 +11,6 @@ SELECT
   field_name,
   meta,
   created_at,
-  updated_at
+  updated_at,
+  encode(ciphertext, 'hex') AS ciphertext_hex
 FROM encrypted_fields;
