@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL%208.0%2B-4479A1?logo=mysql&logoColor=white) ![License](https://img.shields.io/badge/license-BlackCat%20Proprietary-red) ![Status](https://img.shields.io/badge/status-stable-informational) ![Generated](https://img.shields.io/badge/generated-from%20schema--map-blue)
 
-<!-- Auto-generated from schema-map.psd1 @ 6cefe8e (2025-10-22T20:27:41+02:00) -->
+<!-- Auto-generated from schema-map-postgres.psd1 @ 62c9c93 (2025-11-20T21:38:11+01:00) -->
 
 > Schema package for table **encrypted_fields** (repo: `encrypted-fields`).
 
@@ -39,14 +39,14 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/020_indexes.sql
 ## Columns
 | Column | Type | Null | Default | Extra |
 |-------:|:-----|:----:|:--------|:------|
-| id | BIGINT UNSIGNED | — | — | AUTO_INCREMENT, PK |
+| id | BIGINT | — | AS | PK |
 | entity_table | VARCHAR(64) | NO | — |  |
 | entity_pk | VARCHAR(64) | NO | — |  |
 | field_name | VARCHAR(64) | NO | — |  |
-| ciphertext | LONGBLOB | NO | — |  |
-| meta | JSON | NO | — |  |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) |  |
-| updated_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) |  |
+| ciphertext | BYTEA | NO | — |  |
+| meta | JSONB | NO | — |  |
+| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) |  |
+| updated_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) |  |
 
 ## Relationships
 - No outgoing foreign keys.
@@ -58,15 +58,15 @@ erDiagram
     VARCHAR entity_table
     VARCHAR entity_pk
     VARCHAR field_name
-    BLOB ciphertext
-    JSON meta
-    DATETIME created_at
-    DATETIME updated_at
+    BYTEA ciphertext
+    JSONB meta
+    TIMESTAMPTZ created_at
+    TIMESTAMPTZ updated_at
   }
 ```
 
 ## Indexes
-- 1 deferred index statement(s) in schema/020_indexes.sql.
+- 3 deferred index statement(s) in schema/020_indexes.sql.
 
 ## Notes
 - Generated from the umbrella repository **blackcat-database** using `scripts/schema-map.psd1`.
