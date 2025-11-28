@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class EncryptedFieldDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'entity_table' => 'entityTable', 'entity_pk' => 'entityPk', 'field_name' => 'fieldName', 'created_at' => 'createdAt', 'updated_at' => 'updatedAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'entity_table' => 'entityTable', 'entity_pk' => 'entityPk', 'field_name' => 'fieldName', 'ciphertext' => 'ciphertext', 'meta' => 'meta', 'created_at' => 'createdAt', 'updated_at' => 'updatedAt' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];
