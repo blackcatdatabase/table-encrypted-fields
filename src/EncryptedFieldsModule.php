@@ -96,7 +96,7 @@ SQL;
         $hasView  = SchemaIntrospector::hasView($db, $d, $view);
 
         // Quick index/FK check â€“ generator injects names (case-sensitive per DB)
-        $expectedIdx = [ 'gin_encrypted_fields_meta', 'idx_enc_entity', 'idx_encrypted_fields_field' ];
+        $expectedIdx = [ 'idx_encrypted_fields_field' ];
         if ($d->isMysql()) {
             // Drop PG-only index naming patterns (e.g., GIN/GiST)
             $expectedIdx = array_values(array_filter(
@@ -129,7 +129,7 @@ SQL;
             'columns'     => Definitions::columns(),
             'version'     => $this->version(),
             'dialects'    => [ 'mysql', 'postgres' ],
-            'indexes'     => [ 'gin_encrypted_fields_meta', 'idx_enc_entity', 'idx_encrypted_fields_field' ],
+            'indexes'     => [ 'idx_encrypted_fields_field' ],
             'foreignKeys' => [],
         ];
     }
