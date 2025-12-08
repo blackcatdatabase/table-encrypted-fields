@@ -5,14 +5,14 @@ Per-field encryption store for arbitrary entities.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| ciphertext | BYTEA | NO |  | Encrypted payload. |
-| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
+| ciphertext | LONGBLOB | NO |  | Encrypted payload. |
+| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
 | entity_pk | VARCHAR(64) | NO |  | Referenced entity primary key (string). |
 | entity_table | VARCHAR(64) | NO |  | Referenced table name. |
 | field_name | VARCHAR(64) | NO |  | Encrypted field name. |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| meta | JSONB | NO |  | Encryption metadata (JSON). |
-| updated_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Update timestamp (UTC). |
+| meta | JSON | NO |  | Encryption metadata (JSON). |
+| updated_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Update timestamp (UTC). |
 
 ## Engine Details
 
@@ -50,7 +50,7 @@ Indexes:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_encrypted_fields | mysql | algorithm=MERGE, security=INVOKER | [packages\encrypted-fields\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/encrypted-fields/schema/040_views.mysql.sql) |
-| vw_encrypted_fields_without_binding | mysql | algorithm=MERGE, security=INVOKER | [packages\encrypted-fields\schema\040_views_joins.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/encrypted-fields/schema/040_views_joins.mysql.sql) |
-| vw_encrypted_fields | postgres |  | [packages\encrypted-fields\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/encrypted-fields/schema/040_views.postgres.sql) |
-| vw_encrypted_fields_without_binding | postgres |  | [packages\encrypted-fields\schema\040_views_joins.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/encrypted-fields/schema/040_views_joins.postgres.sql) |
+| vw_encrypted_fields | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_encrypted_fields_without_binding | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views_joins.mysql.sql](schema\040_views_joins.mysql.sql) |
+| vw_encrypted_fields | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
+| vw_encrypted_fields_without_binding | postgres |  | [schema\040_views_joins.postgres.sql](schema\040_views_joins.postgres.sql) |
