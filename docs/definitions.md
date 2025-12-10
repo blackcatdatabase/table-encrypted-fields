@@ -5,14 +5,14 @@ Per-field encryption store for arbitrary entities.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| field_name | VARCHAR(64) | NO |  | Encrypted field name. |
-| id | BIGINT | NO |  | Surrogate primary key. |
 | ciphertext | mysql: LONGBLOB / postgres: BYTEA | NO |  | Encrypted payload. |
 | created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
+| entity_pk | VARCHAR(64) | NO |  | Referenced entity primary key (string). |
 | entity_table | VARCHAR(64) | NO |  | Referenced table name. |
+| field_name | VARCHAR(64) | NO |  | Encrypted field name. |
+| id | BIGINT | NO |  | Surrogate primary key. |
 | meta | mysql: JSON / postgres: JSONB | NO |  | Encryption metadata (JSON). |
 | updated_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Update timestamp (UTC). |
-| entity_pk | VARCHAR(64) | NO |  | Referenced entity primary key (string). |
 
 ## Engine Details
 
