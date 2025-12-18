@@ -1,0 +1,32 @@
+{
+  "tables": {
+    "encrypted_fields": {
+      "columns": {
+        "ciphertext": {
+          "strategy": "passthrough"
+        },
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "entity_pk": {
+          "strategy": "passthrough"
+        },
+        "entity_table": {
+          "strategy": "passthrough"
+        },
+        "field_name": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "meta": {
+          "strategy": "passthrough"
+        },
+        "updated_at": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}

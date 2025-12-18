@@ -3,16 +3,16 @@
 Per-field encryption store for arbitrary entities.
 
 ## Columns
-| Column | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| entity_table | VARCHAR(64) | NO |  | Referenced table name. |
-| entity_pk | VARCHAR(64) | NO |  | Referenced entity primary key (string). |
-| field_name | VARCHAR(64) | NO |  | Encrypted field name. |
-| ciphertext | mysql: LONGBLOB / postgres: BYTEA | NO |  | Encrypted payload. |
-| meta | mysql: JSON / postgres: JSONB | NO |  | Encryption metadata (JSON). |
-| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
-| updated_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Update timestamp (UTC). |
+| Column | Type | Null | Default | Description | Crypto |
+| --- | --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |  |
+| entity_table | VARCHAR(64) | NO |  | Referenced table name. |  |
+| entity_pk | VARCHAR(64) | NO |  | Referenced entity primary key (string). |  |
+| field_name | VARCHAR(64) | NO |  | Encrypted field name. |  |
+| ciphertext | mysql: LONGBLOB / postgres: BYTEA | NO |  | Encrypted payload. |  |
+| meta | mysql: JSON / postgres: JSONB | NO |  | Encryption metadata (JSON). |  |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |
+| updated_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Update timestamp (UTC). |  |
 
 ## Engine Details
 
